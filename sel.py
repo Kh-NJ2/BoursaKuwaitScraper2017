@@ -6,6 +6,10 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
 
+
+userEmail = input("Enter Email: ")
+userPassword = input("Enter Password: ")
+
 options = Options()
 options.add_experimental_option("detach", True)
 
@@ -24,8 +28,8 @@ email = driver.find_element(By.ID, "MainContent_txtLoginEmail")
 password = driver.find_element(By.ID, 'MainContent_txtLoginPassword')
 loginBtn = driver.find_element(By.ID, 'MainContent_btnLogon')
 
-email.send_keys("mayfieldharrina@gmail.com")
-password.send_keys("Hhhh@1111")
+email.send_keys(userEmail)
+password.send_keys(userPassword)
 loginBtn.click()
 
 securityDataBtn = driver.find_element(By.LINK_TEXT, 'Security Data')
